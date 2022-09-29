@@ -1,0 +1,114 @@
+﻿@model AspNetCore_Template.Models.LoginModel
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Login</title>
+
+    <environment include="Development">
+        <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/assets/css/style.css" rel="stylesheet" />
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="~/assets/js/jquery.min.js"></script>
+        <script src="~/assets/js/bootstrap.min.js"></script>
+        <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    </environment>
+</head>
+<body>
+    <style>
+        html, body {
+            margin: 0 auto;
+            padding: 0;
+            height: 100%;
+            background-color: #3d4459;
+        }
+
+        .mainDev {
+            display: table;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0px;
+            width: 50%;
+        }
+
+        .container-login {
+            color: #ffffff;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .alert {
+            top: 20px;
+            opacity: 0.8;
+            right: 20px;
+            padding: 10px;
+            font-size: 12px;
+            position: absolute;
+        }
+
+        .form-group {
+            padding: 10px;
+        }
+
+        .form-group input {
+            padding: 10px;
+            font-family: Code2000-rdLO;
+        }
+    </style>
+
+    <script>
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0)
+        }, 1500);
+    </script>
+
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Raw(@ViewBag.Alert)
+        </div>
+    </div>
+
+    <div class="mainDev">
+        <div class="container-login">
+            <div class="card shadow border-3">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md">
+                                <h1 class="text-black sysTitle">System Title</h1>
+
+                                <br />
+
+                                <form asp-action="Validate" asp-controller="Login" method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label for="Username" class="text-black mb-1">Username</label>
+                                        <input type="text" class="form-control" asp-for="Username" autocomplete="off" />
+                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Password" class="text-black mb-1">Password</label>
+                                        <input type="password" class="form-control" asp-for="Password" autocomplete="off" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+
+                                    <!-- Action Button -->
+                                    <div class="col-md-12 mt-3" style="text-align: right">
+                                        <button type="submit" class="btn btn-danger btn-sm btnConfirm">Secure Login&nbsp;<i class="fa fa-lock"></i></button>
+                                    </div>
+                                    <!-- End Action Button -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

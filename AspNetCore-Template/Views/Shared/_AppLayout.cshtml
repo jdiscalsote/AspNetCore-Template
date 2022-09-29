@@ -1,0 +1,57 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title class="sysTitle">System Title - @ViewBag.Title</title>
+
+    <environment include="Development">
+        <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/assets/css/style.css" rel="stylesheet" />
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="~/assets/js/jquery.min.js"></script>
+        <script src="~/assets/js/bootstrap.min.js"></script>
+        <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    </environment>
+
+    <style>
+        .fixed-top {
+            width: 100%;
+            top: 0px;
+            padding-top: 11px;
+            height: 60px;
+            overflow: hidden;
+            z-index: 100;
+            color: darkgray;
+            background-color: #3d4459;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+            transition: all 0.6s ease;
+        }
+
+        .navbar .float-end a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand sysTitle" href="/Dashboard/Dashboard">System Title</a>
+            <div class="float-end">
+                <i class="fa fa-power-off small"></i>&nbsp;@Html.ActionLink("Logout", "Index", "Login")
+            </div>
+        </div>
+    </nav>
+    <!-- End Navigation -->
+
+    <!-- Page Content -->
+    <div class="container pt-5 mt-5">
+        @RenderBody()
+    </div>
+    <!-- End Page Content -->
+</body>
+</html>
