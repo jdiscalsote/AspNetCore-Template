@@ -1,6 +1,6 @@
 ## AspNet.Core MVC - Template
 
-Incluson:
+Inclusion:
 
 - Login
 - Dashboard
