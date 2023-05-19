@@ -1,1 +1,1 @@
-## AspNetCore-Template
+## AspNetCore-Template MVC
